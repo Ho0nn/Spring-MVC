@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class HelloWorldController {
 
     // controller method to show initial form
-   @GetMapping("/showForm")
+   @RequestMapping("/showForm")
     public String showForm() {
         return "helloworld-form";
     }
@@ -40,10 +40,8 @@ public class HelloWorldController {
 
        return "helloworld";
      }
-    @RequestMapping("/processFormV3")
+    @PostMapping ("/processFormV3")
     public String letsShouDudeV3(@RequestParam("studentName") String name ,Model model) {
-
-
         // convert data to Uppercase
         name=name.toUpperCase();
 
