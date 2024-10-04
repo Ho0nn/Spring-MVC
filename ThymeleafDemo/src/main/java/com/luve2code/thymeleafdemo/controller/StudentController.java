@@ -1,12 +1,11 @@
 package com.luve2code.thymeleafdemo.controller;
-
 import com.luve2code.thymeleafdemo.model.Student;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
@@ -14,7 +13,9 @@ import java.util.List;
 public class StudentController {
     @Value("${countries}")
     private List<String> countries;
-    @GetMapping("/showStudentForm")
+    @Value("${languages}")
+    private List<String>languages;
+    @RequestMapping("/showStudentForm")
     public String showForm(Model model){
        // create student object
         Student student= new Student();
@@ -22,8 +23,10 @@ public class StudentController {
         model.addAttribute("student",student);
 
         // add the countries to the model
-
         model.addAttribute("countries",countries);
+        // add languages to the model
+        model.addAttribute("languages",languages);
+
         return "student-form";
     }
 
