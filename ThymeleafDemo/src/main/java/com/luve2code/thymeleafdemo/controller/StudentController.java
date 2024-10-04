@@ -15,6 +15,8 @@ public class StudentController {
     private List<String> countries;
     @Value("${languages}")
     private List<String>languages;
+    @Value("${frameworks}")
+    private List<String>frameworks;
     @RequestMapping("/showStudentForm")
     public String showForm(Model model){
        // create student object
@@ -26,7 +28,8 @@ public class StudentController {
         model.addAttribute("countries",countries);
         // add languages to the model
         model.addAttribute("languages",languages);
-
+        // add frameworks to the model
+        model.addAttribute("frameworks",frameworks);
         return "student-form";
     }
 

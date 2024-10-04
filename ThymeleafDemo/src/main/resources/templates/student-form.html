@@ -22,6 +22,13 @@
            th:text="${tempLang}"
            th:value="${tempLang}"/>
     <br><br>
+    Favorite Frameworks:
+
+    <input type="checkbox" th:field="*{frameworks}"
+           th:each="tempFramework : ${frameworks}"
+           th:text="${tempFramework}"
+           th:value="${tempFramework}"/>
+    <br><br>
     <input type="submit" value="Submit"/>
 </form>
 </body>

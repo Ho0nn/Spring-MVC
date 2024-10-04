@@ -11,5 +11,12 @@ Thw Student is confimed : <span th:text="${student.firstName}+' ' + ${student.la
 Country: <span th:text="${student.country}"/>
 <br><br>
 Favorite Language: <span th:text="${student.favoriteLanguage}"/>
+<br><br>
+Favorite Frameworks:
+<ul>
+    <li th:each="framework : ${student.frameworks}" th:text="${framework}"/>
+    
+</ul>
+
 </body>
 </html>

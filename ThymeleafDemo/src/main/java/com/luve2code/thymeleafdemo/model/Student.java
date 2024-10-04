@@ -1,6 +1,8 @@
 package com.luve2code.thymeleafdemo.model;
 
 
+import java.util.List;
+
 public class Student {
     private String firstName;
     private String lastName;
@@ -8,6 +10,7 @@ public class Student {
     private String country;
 
     private String favoriteLanguage;
+    private List<String> frameworks;
     public Student() {
     }
 
@@ -41,5 +44,13 @@ public class Student {
 
     public void setFavoriteLanguage(String favoriteLanguage) {
         this.favoriteLanguage = favoriteLanguage;
+    }
+
+    public List<String> getFrameworks() {
+        return frameworks;
+    }
+
+    public void setFrameworks(List<String> frameworks) {
+        this.frameworks = frameworks;
     }
 }
