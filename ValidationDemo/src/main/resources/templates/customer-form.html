@@ -4,24 +4,38 @@
     <meta charset="UTF-8">
     <title>Customer Registration Form</title>
     <STYLE>
-        .error{color: #650303
+        .error{color: #de1111
         }
     </STYLE>
 </head>
 <body>
 <i>
-    Fill Otu the form. (*) fields are required
+    Fill out the form. (*) fields are required
 </i>
 <br><br>
 <form action="#" th:action="@{/processForm}" th:object="${customer}" method="post">
        First name : <input type="text" th:field="*{firstName}" />
     <br><br>
        Last name * : <input type="text" th:field="*{lastName}" />
-    <br><br>
     <!-- Add Error message-->
     <span th:if="${#fields.hasErrors('lastName')}"
           th:errors="*{lastName}"
           class="error"  ></span>
+
+    <br><br>
+    Free Passes : <input type="text" th:field="*{freePasses}" />
+   <!-- Add Error message-->
+   <span th:if="${#fields.hasErrors('freePasses')}"
+   th:errors="*{freePasses}"
+   class="error"  ></span>
+    <br><br>
+
+    Postal Code: <input type="text" th:field="*{postalCode}" />
+    <!-- Add Error message-->
+    <span th:if="${#fields.hasErrors('postalCode')}"
+          th:errors="*{postalCode}"
+          class="error"  ></span>
+
     <br><br>
     <input type="submit" value="Submit" />
 
