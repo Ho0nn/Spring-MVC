@@ -49,12 +49,20 @@ public class EmployeeController {
         // set employee to model
         model.addAttribute("employee",emp);
 
-        // send over ro form
+        // send over  form
 
         return "employees/employee-form";
 
     }
+    @GetMapping("/delete")
+    public String deleteEmployee (@RequestParam("empId") int id){
 
+        // delete emp from service
+        employeeService.deleteById(id);
+
+        // redirect employeesList
+        return "redirect:/employees/list";
+    }
 
     @PostMapping("/save")
     public String saveEmployee(@ModelAttribute("employee") Employee emp){

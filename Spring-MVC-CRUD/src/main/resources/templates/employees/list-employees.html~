@@ -41,7 +41,7 @@
                    class="btn btn-info btn-sm">
                     Update
                 </a>
-                <a th:href="@{/employees/delete(empId=${tempEmployee.id})}"
+                <a th:herf="@{/employees/delete(empId=${tempEmployee.id})}"
                    class="btn btn-danger btn-sm"
                    onclick="if(!(confirm('Are you sure you want to delete this employee?'))) return false ">
                     Delete
